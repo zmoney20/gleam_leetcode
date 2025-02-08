@@ -12,8 +12,19 @@ version = "1.0.0"
 # For a full reference of all the available options, you can have a look at
 # https://gleam.run/writing-gleam/gleam-toml/.
 
+[cactus.pre-commit]
+# list of actions for the hook
+actions = [
+    # command: name of the command or binary to be run: required
+    # kind: is it a gleam subcommand, a binary or a module: ["sub_command", "binary", "module"], default: module
+    # args: additional args to be passed to the command, default: []
+    { command = "format", kind = "sub_command", args = [] },
+    { command = "test", kind = "sub_command", args = [] },
+]
+
 [dependencies]
 gleam_stdlib = ">= 0.44.0 and < 2.0.0"
 
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"
+cactus = ">= 1.3.3 and < 2.0.0"

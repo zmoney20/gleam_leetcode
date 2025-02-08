@@ -1,6 +1,6 @@
 import gleam/list
 
-fn index_pair(pairs: List(#(Int, Int))) -> Result(#(Int, Int),String) {
+fn index_pair(pairs: List(#(Int, Int))) -> Result(#(Int, Int), String) {
   case pairs {
     [first_pair, second_pair] -> {
       let #(first_index, _) = first_pair
@@ -11,7 +11,11 @@ fn index_pair(pairs: List(#(Int, Int))) -> Result(#(Int, Int),String) {
   }
 }
 
-fn helper(pairs: List(#(Int, Int)), nums: List(Int),target: Int) -> Result(#(Int, Int),String) {
+fn helper(
+  pairs: List(#(Int, Int)),
+  nums: List(Int),
+  target: Int,
+) -> Result(#(Int, Int), String) {
   pairs
   |> list.filter(fn(pair) {
     let #(_, x) = pair
