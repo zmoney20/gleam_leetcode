@@ -23,5 +23,12 @@ pub fn third_test() {
 
 pub fn fourth_test() {
   two_sum([1, 2, 3], 9)
-  |> should.equal(Error("No matches found"))
+  |> should.equal(Error(Nil))
+}
+
+pub fn fifth_test() {
+  two_sum([1, 2, 3, 4], 5)
+  |> should.equal(Ok(#(0, 3)))
+  // 1 + 4 = 5
+  // multiple matches, but returns the first one
 }
